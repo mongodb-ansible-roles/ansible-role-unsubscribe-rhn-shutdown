@@ -1,1 +1,14 @@
 ---
+- name: Copy systemd unit file
+  copy:
+    src: unsubscribe.service
+    dest: /etc/systemd/system/
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Enable systemd unit
+  systemd:
+    name: unsubscribe.service
+    daemon_reload: true
+    enabled: true
