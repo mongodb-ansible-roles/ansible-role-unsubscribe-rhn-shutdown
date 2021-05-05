@@ -1,0 +1,10 @@
+[Unit]
+Description=Unsubscribe from RHN
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/usr/sbin/subscription-manager unregister
+
+[Install]
+WantedBy=multi-user.target
